@@ -42,9 +42,10 @@ nav {
     width: 80%;
     padding: 10px;
     height: 100%;
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
+    flex-direction: row;
   }
   .product {
     width: 80%;
@@ -176,4 +177,46 @@ nav {
     align-items: center;
     border: 1px solid #000;
     cursor: pointer;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  th {
+    background-color: #dddddd;
+  }
+
+  .container01 {
+    display: flex;
+    justify-content: center; /* จัดให้อยู่กึ่งกลางตามแนวนอน */
+  }
+  
+  .sidebar01 {
+    display: flex;
+    flex-direction: row; /* จัดให้เรียงแนวนอน */
+    align-items: center; /* จัดให้อยู่กึ่งกลางตามแนวตั้ง */
+  }
+  
+  .sidebar-items01 {
+    margin: 10px; /* ระยะห่างระหว่างสินค้า */
+    padding: 10px; /* ระยะห่างภายในสินค้า */
+    border: 1px solid #ccc; /* เส้นขอบ */
+    border-radius: 5px; /* ทำให้มีเส้นขอบโค้ง */
+    background-color: #f9f9f9; /* สีพื้นหลัง */
+  }
+  
+  .sidebar-items:hover {
+    background-color: #f0f0f0; /* สีพื้นหลังเมื่อเม้าส์ไปชี้ */
   }
