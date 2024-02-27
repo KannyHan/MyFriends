@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="product" id="pro">
+        <div class="product-items">
+          <img class="product-img" src="รูปประกอบ/A0147295OK_BIG_1.jpg" alt="โน๊ตบุ๊ค Notebook DELL Latitide 3440-SNS3440017 (Black)">
+          <p style="font-size: 1.2vw;">โน๊ตบุ๊ค Notebook DELL Latitide 3440-SNS3440017 (Black)</p>
+          <p style="font-size: 1vw;">49,900.-THB</p>
+          <button class="btn-compare" onclick="addToCart('โน๊ตบุ๊ค Notebook DELL Latitide 3440-SNS3440017 (Black)', 49900)">เพิ่มลงตะกล้า</button> 
+          <p id="result"></p>
+        </div>
+        <div class="product-items">
+          <img class="product-img" src="รูปประกอบ/Notebook DELL Latitide 3440-SNS3440017 (Black).webp" alt="โน๊ตบุ๊ค Notebook DELL Latitide 3440-SNS3440017 (Black)">
+          <p style="font-size: 1.2vw;">โน๊ตบุ๊ค Notebook DELL Latitide 3440-SNS3440017 (Black)</p>
+          <p style="font-size: 1vw;">49,900.-THB</p>
+          <button class="btn-compare" onclick="addToCart()">เพิ่มลงตะกล้า</button> 
+          <p id="result"></p>
+        </div>
+        <div class="product-items">
+          <img class="product-img" src="รูปประกอบ/Notebook Lenovo V15 G3 ABA 82TV0084TA (Business Black).jpg" alt="โน๊ตบุ๊ค Notebook Lenovo V15 G3 ABA 82TV0084TA (Business Black)">
+          <p style="font-size: 1.2vw;">โน๊ตบุ๊ค Notebook Lenovo V15 G3 ABA 82TV0084TA (Business Black)</p>
+          <p style="font-size: 1vw;">15,900.-THB</p>
+          <button class="btn-compare" onclick="addToCart()">เพิ่มลงตะกล้า</button> 
+          <p id="result"></p>
+        </div>
+        <div class="product-items">
+          <img class="product-img" src="รูปประกอบ/SFA16-41-R8KA.jpeg" alt="โน๊ตบุ๊ค Acer Swift Edge SFA16-41-R8KA Notebook">
+          <p style="font-size: 1.2vw;">โน๊ตบุ๊ค Acer Swift Edge SFA16-41-R8KA Notebook</p>
+          <p style="font-size: 1vw;">43,990.-THB</p>
+          <button class="btn-compare" onclick="addToCart()">เพิ่มลงตะกล้า</button> 
+        </div>
+      </div>
+      
+      <div id="cart" style="display: none;">
+        <h2>ตะกร้าสินค้า</h2>
+        <div id="cart-items"></div>
+      </div>
+      
+      <script>
+        var cartItems = []; // เก็บรายการสินค้าที่เพิ่มลงในตะกร้า
+      
+        function addToCart(productName, price) {
+          var product = {
+            name: productName,
+            price: price
+          };
+          cartItems.push(product); // เพิ่มสินค้าลงในตะกร้า
+      
+          // แสดงรายการสินค้าในตะกร้า
+          var cartElement = document.getElementById("cart-items");
+          cartElement.innerHTML = ""; // เคลียร์รายการที่แสดงอยู่ก่อนหน้า
+      
+          cartItems.forEach(function(item) {
+            var itemElement = document.createElement("div");
+            itemElement.innerHTML = "<p>" + item.name + " - " + item.price + " THB</p>";
+            cartElement.appendChild(itemElement);
+          });
+      
+          // แสดงหน้าตะกร้า
+          document.getElementById("cart").style.display = "block";
+        }
+      </script>
+</body>
+</html>
