@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+  
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <a class="sidebar-items" onclick="addToCart('โน๊ตบุ๊ค Notebook DELL Latitide 3440-SNS3440017 (Black)', 
+            'Intel Core i7-1355U (1.7GHz up to 5.0GHz, 12MB Intel Smart Cache)','Integrated Graphics','16GB')">
+                โน๊ตบุ๊ค Notebook DELL Latitide 3440-SNS3440017 (Black)</a>
+        </div>
+
+    </div>
+
+      <div id="cart" style="display: none;">
+        <h2>เปรียบเทียบ</h2>
+        <div id="cart-items"></div>
+      </div>
+      
+      <script>
+        var cartItems = []; // เก็บรายการสินค้าที่เพิ่มลงในตะกร้า
+      
+        function addToCart(productName,CPU,Grand,RAM) {
+          var product = {
+            name: productName,
+            Processor: CPU,
+            Graphics: Grand,
+            Main_Memory: RAM
+          };
+          cartItems.push(product); // เพิ่มสินค้าลงในตะกร้า
+      
+          // แสดงรายการสินค้าในตะกร้า
+          var cartElement = document.getElementById("cart-items");
+          cartElement.innerHTML = ""; // เคลียร์รายการที่แสดงอยู่ก่อนหน้า
+      
+          cartItems.forEach(function(item) {
+            var itemElement = document.createElement("tr");
+            itemElement.innerHTML = "<td>" + item.name + "</td>" + 
+                                    "<td>" + item.Processor + "</td>" + 
+                                    "<td>" + item.Graphics + "</td>" + 
+                                    "<td>" + item.Main_Memory + "</td>";
+            cartElement.appendChild(itemElement);
+          });
+      
+          // แสดงหน้าตะกร้า
+          document.getElementById("cart").style.display = "block";
+        }
+      </script>
+</body>
+</html>
