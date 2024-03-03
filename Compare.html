@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <nav>
+      <div class="nav-container">
+          <a href="index.html">
+            <img src="รูปประกอบ/Blue-fox-[Recovered].png" class="logo" href="index.html">
+          </a>
+        </div>
+  </nav>
+</body>
+<div class="container">
+  <input type="text" class="sidebar-search" placeholder="Search something...">
+    <div class="sidebar">
+      <a href="index.html" class="sidebar-items">
+        หน้าหลัก
+      </a>
+      <a href="Product_note.html" class="sidebar-items">
+        โน็ตบุ๊ค
+      </a>
+      <a href="Product_horware_com.html" class="sidebar-items">
+        คอมพิวเตอร์ฮาทแวร์
+      </a>
+      <a href="Compare.html" class="sidebar-items">
+        เปรียบเทียบ
+      </a>
+    </div>
+<body>
+    <div class="container01">
+
+      <div class="sidebar01">
+        <button class="sidebar-items01" onclick="addToCart('Notebook Acer SFA16-41-R8KA (16) Olivine Black AMD', 
+        'AMD Ryzen 5 6600U (2.9GHz up to 4.5GHz, 3MB L2 Cache / 16MB L3 Cache)','	AMD Radeon Graphics (Integrated Graphics)','16GB')">
+            Notebook Acer SFA16-41-R8KA (16) Olivine Black AMD</button>
+     </div>
+
+        <div class="sidebar01">
+            <button class="sidebar-items01" onclick="addToCart('โน๊ตบุ๊ค Notebook DELL Latitide 3440-SNS3440017 (Black)', 
+            'Intel Core i7-1355U (1.7GHz up to 5.0GHz, 12MB Intel Smart Cache)','Integrated Graphics','16GB')">
+                โน๊ตบุ๊ค Notebook DELL Latitide 3440-SNS3440017 (Black)</button>
+        </div>
+       <div class="sidebar01">
+        <button class="sidebar-items01" onclick="addToCart('โน๊ตบุ๊ค Notebook Lenovo V15 G3 ABA 82TV0084TA (Business Black)', 
+        'AMD Ryzen 5 5625U (2.3GHz up to 4.3GHz, 3MB L2 / 16MB L3 Cache)','AMD Radeon Graphics (Integrated Graphics)','8GB')">
+            โน๊ตบุ๊ค Notebook Lenovo V15 G3 ABA 82TV0084TA (Business Black)</button>
+      </div>
+
+      <div class="sidebar01">
+        <button class="sidebar-items01" onclick="addToCart('โน๊ตบุ๊ค Acer Swift Edge SFA16-41-R8KA Notebook', 
+        'AMD Ryzen 5 6600U 2.90GHz up to 4.50GHz, 6C/12T 16MB L3 Cache','AMD Radeon Graphics','16GB')">
+            โน๊ตบุ๊ค Acer Swift Edge SFA16-41-R8KA Notebook</button>
+      </div>
+
+    </div>
+
+      <div id="cart" style="display: none;">
+        <h2>เปรียบเทียบ</h2>
+        <div id="cart-items"></div>
+      </div>
+      
+      <script>
+        var cartItems = []; // เก็บรายการสินค้าที่เพิ่มลงในตะกร้า
+      
+        function addToCart(productName,CPU,Grand,RAM) {
+          var product = {
+            name: productName,
+            Processor: CPU,
+            Graphics: Grand,
+            Main_Memory: RAM
+          };
+          cartItems.push(product); // เพิ่มสินค้าลงในตะกร้า
+      
+          // แสดงรายการสินค้าในตะกร้า
+          var cartElement = document.getElementById("cart-items");
+          cartElement.innerHTML = ""; // เคลียร์รายการที่แสดงอยู่ก่อนหน้า
+      
+          cartItems.forEach(function(item) {
+            var itemElement = document.createElement("tr");
+            itemElement.innerHTML = "<td>" + item.name + "</td>" + 
+                                    "<td>" + item.Processor + "</td>" + 
+                                    "<td>" + item.Graphics + "</td>" + 
+                                    "<td>" + item.Main_Memory + "</td>";
+            cartElement.appendChild(itemElement);
+          });
+      
+          // แสดงหน้าตะกร้า
+          document.getElementById("cart").style.display = "block";
+        }
+      </script>
+      <br><br><br><br>
+</body>
+</html>
